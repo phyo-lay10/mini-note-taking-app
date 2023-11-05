@@ -85,7 +85,12 @@ class NoteController extends Controller
 
     public function copy($id)
     {
-
+        // $note = Note::findOrfail($id);
+        // Note::create([
+        //     'title' => $note->title,
+        //     'content' => $note->content,
+        //     'user_id' => Auth::user()->id,
+        // ]);
         $note = Note::findOrfail($id);
         $newNote = $note->replicate();
         // $newNote->created_at = Carbon::now();
